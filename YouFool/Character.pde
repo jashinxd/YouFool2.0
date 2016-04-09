@@ -2,45 +2,57 @@
 class Character {
   float x = 100;
   float y = 500;
-  int state = forward;
+  float Espawn = 100;
+  String state = "forward";
   int diameter = 50;
-  float health = 60;
+  float health = 20;
   float speed = 9.75;
-  photo = loadImage("../static/map.jpg");
-  photo.resize(1200, 1200);
+  PImage character;
+
 
   void process() {
-    if (state == forward) {
+    character = loadImage("../static/map.jpg");
+    character.resize(1200, 1200);
+    if (state == "forward") {
       f();
     }
-    if (state == backward) {
+    if (state == "backward") {
       b();
     }
-    if (state == left) {
+    if (state == "left") {
       l();
     }
-    if (state == right) {
+    if (state == "right") {
       r();
+    }
+    if (Espawn <= 7) {
+      state = "fight";
+    }
+    if (state == "fight") {
     }
   }
 
   void move() {
-    if (keyPressed) {
+    if (keyPressed && state != "fight") {
 
       if (key == 's') {
-        state = forward;
+        Espawn = random(100);
+        state = "forward";
         y = y + speed;
       }
       if (key == 'd') {
-        state = right;
+        Espawn = random(100);
+        state = "right";
         x = x + speed;
       }
       if (key == 'a') {
-        state = left;
+        Espawn = random(100);
+        state = "left";
         x = x - speed;
       }
       if (key == 'w') {
-        state = backward;
+        Espawn = random(100);
+        state = "backward";
         y = y - speed;
       }
     }
