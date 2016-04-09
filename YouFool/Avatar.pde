@@ -1,6 +1,7 @@
 class Avatar {
   float x = 100;
   float y = 500;
+  float random = 400;
   float Espawn = 100;
   String state = "forward";
   int diameter = 50;
@@ -15,7 +16,11 @@ PImage right;
     down = loadImage("../sprites/characterdown.jpg");
     left = loadImage("../sprites/characterleft.jpg");
     right = loadImage("../sprites/characterright.jpg");
-
+if (keyPressed){
+ if (key == 'r'){
+Espawn = 40; 
+}
+}
     if (state == "forward") {
       f();
     }
@@ -28,34 +33,43 @@ PImage right;
     if (state == "right") {
       r();
     }
-    if (Espawn <= 1) {
+    if (Espawn <= 3) {
       state = "fight";
     }
     if (state == "fight") {
-      background(random(255),random(255),random(255));
+      background(255,50,10);
+      textSize(100);
+      text("Fight",width/2,height/2);
     }
   }
 
   void move() {
+    if (keyPressed){
+ if (key == 'r'){
+Espawn = 40; 
+state = "foward";
+}
+}
+
     if (keyPressed && state != "fight") {
 
       if (key == 's') {
-        Espawn = random(100);
+        Espawn = random(random);
         state = "forward";
         y = y + speed;
       }
       if (key == 'd') {
-        Espawn = random(100);
+        Espawn = random(random);
         state = "right";
         x = x + speed;
       }
       if (key == 'a') {
-        Espawn = random(100);
+        Espawn = random(random);
         state = "left";
         x = x - speed;
       }
       if (key == 'w') {
-        Espawn = random(100);
+        Espawn = random(random);
         state = "backward";
         y = y - speed;
       }
@@ -75,7 +89,7 @@ PImage right;
   }
 
   void b() {
-    image(down,x,y);
+    image(up,x,y);
   }
 }
 
