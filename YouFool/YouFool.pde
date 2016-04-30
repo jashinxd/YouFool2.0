@@ -17,8 +17,8 @@ void setup() {
 void draw() {
 
   image(photo, 0, 0);
-      avatar.process();
-    avatar.move();
+  avatar.process();
+  avatar.move();
     
 
 }

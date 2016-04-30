@@ -1,27 +1,26 @@
 class Fight {
-    float p=200;
+  float p=200;
   float buttonX=width/2 - 50;
   float buttonY=1;
-
-  Avatar avatar;
+  float mana = 50;
 
 
   void options () {
-    avatar = new Avatar();
+    background(#9c9c9c);
     attack();
     magic();
     block();
     if (mousePressed) {
-      if (mouseY <= buttonY+20 && mouseY>= buttonY) {
-        if (mouseX >= buttonX-p && mouseX <= buttonX-p+50) {
-            text (50,300,300);
+      if (mouseY <= buttonY+50 && mouseY>= buttonY) {
+        if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
+          //text (50, 300, 300);
+          rect(100, 100, 100, 100);
         }
-        if (mouseX >= buttonX && mouseX <= buttonX+50) {
-          text (50,300,300);
-          avatar.mana = avatar.mana - random(2,5);
+        if (mouseX >= buttonX && mouseX <= buttonX+100) {
+          rect(100, 100, 100, 100);
         }
-        if (mouseX >= buttonX+p && mouseX <= buttonX+p+50) {
-            text (50,300,300);
+        if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
+          rect(100, 100, 100, 100);
         }
       }
     }

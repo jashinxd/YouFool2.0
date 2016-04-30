@@ -15,7 +15,7 @@ class Avatar {
   Fight fight;
 
   void process() {
-      fight = new Fight();
+    fight = new Fight();
     up = loadImage("../sprites/characterup.jpg");
     down = loadImage("../sprites/characterdown.jpg");
     left = loadImage("../sprites/characterleft.jpg");
@@ -41,9 +41,9 @@ class Avatar {
       state = "fight";
     }
     if (state == "fight") {
-      text(mana,100,100);
-fight.options();
-text(mana,300,100);
+      //text(mana,100,100);
+      fight.options();
+      //text(mana,300,100);
     }
   }
 
