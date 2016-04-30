@@ -2,11 +2,11 @@ class Fight {
   float p=200;
   float buttonX=width/2 - 50;
   float buttonY=1;
-  float health;
-  float mana;
+  int health;
+  int mana;
   float job;
   float enemy;
-
+float enemyH;
 
   void options (Avatar avatar) {
     background(#9c9c9c);
@@ -38,10 +38,23 @@ class Fight {
       if (mousePressed) {
         if (mouseY <= buttonY+50 && mouseY>= buttonY) {
           if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
+                if(job == 1){
+      enemyH = enemyH - random(5,10);
+    }
+    if(job == 2){
+     enemyH = enemyH - random (7,13); 
+    }
     enemy = 2;
           }
           if (mouseX >= buttonX && mouseX <= buttonX+100) {
-            rect(100, 100, 100, 100);
+                            if(job == 1){
+      enemyH = enemyH - random(8,14);
+      mana = mana - random(4-7) ;
+    }
+    if(job == 2){
+     enemyH = enemyH - random (4,9); 
+     mana = mana - random(4-7);
+    }
             enemy = 2;
           }
           if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
