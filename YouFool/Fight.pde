@@ -31,14 +31,23 @@ class Fight {
   void attack () {
     fill(#DC143C);
     rect(buttonX-p, buttonY, 100, 50);
+    String a = "Attack";
+    fill(50);
+    text(a, 300, 10, 70, 80);
   }
   void magic () {
     fill(#1874CD);
     rect(buttonX, buttonY, 100, 50);
+    String m = "Magic";
+    fill(50);
+    text(m, 500, 10, 70, 80);
   }
   void block () {
     fill(#00EE00);
     rect(buttonX+p, buttonY, 100, 50);
+    String b = "Block";
+    fill(50);
+    text(b, 700, 10, 70, 80);
   }
 }
 
