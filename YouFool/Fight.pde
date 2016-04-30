@@ -2,25 +2,52 @@ class Fight {
   float p=200;
   float buttonX=width/2 - 50;
   float buttonY=1;
-  float mana = 50;
+  float health;
+  float mana;
+  float job;
+  float enemy;
 
 
-  void options () {
+  void options (Avatar avatar) {
     background(#9c9c9c);
     attack();
     magic();
     block();
-    if (mousePressed) {
-      if (mouseY <= buttonY+50 && mouseY>= buttonY) {
-        if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
-          //text (50, 300, 300);
-          rect(100, 100, 100, 100);
-        }
-        if (mouseX >= buttonX && mouseX <= buttonX+100) {
-          rect(100, 100, 100, 100);
-        }
-        if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
-          rect(100, 100, 100, 100);
+
+    if ( job == 1 ) {
+      //mage
+      mana = 100; 
+      health = 40;
+    }
+    if ( job == 2 ) {
+      //warrior
+      mana = 20; 
+      health = 75;
+    }
+    
+        if (enemy == 2){
+    if(job == 1){
+      health = health - random(7,13);
+    }
+    if(job == 2){
+     health = health - random (5,10); 
+    }
+    enemy = 1;
+    }
+    if (enemy != 2) {
+      if (mousePressed) {
+        if (mouseY <= buttonY+50 && mouseY>= buttonY) {
+          if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
+    enemy = 2;
+          }
+          if (mouseX >= buttonX && mouseX <= buttonX+100) {
+            rect(100, 100, 100, 100);
+            enemy = 2;
+          }
+          if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
+            rect(100, 100, 100, 100);
+            enemy = 2;
+          }
         }
       }
     }

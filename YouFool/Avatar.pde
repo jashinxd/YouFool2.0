@@ -42,7 +42,7 @@ class Avatar {
     }
     if (state == "fight") {
       //text(mana,100,100);
-      fight.options();
+      fight.options(this);
       //text(mana,300,100);
     }
   }
