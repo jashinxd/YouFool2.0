@@ -33,7 +33,7 @@ Espawn = 40;
     if (state == "right") {
       r();
     }
-    if (Espawn <= 3) {
+    if (Espawn <= 2) {
       state = "fight";
     }
     if (state == "fight") {
