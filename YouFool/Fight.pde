@@ -2,18 +2,13 @@ class Fight {
   float p=200;
   float buttonX=width/2 - 50;
   float buttonY=1;
-  int health;
-  int mana;
-  float job;
+  float health;
+  float mana;
+  float job=1;
   float enemy;
-float enemyH;
-
-  void options (Avatar avatar) {
-    background(#9c9c9c);
-    attack();
-    magic();
-    block();
-
+  float enemyH = 50;
+void job (){
+ 
     if ( job == 1 ) {
       //mage
       mana = 100; 
@@ -23,38 +18,48 @@ float enemyH;
       //warrior
       mana = 20; 
       health = 75;
-    }
-    
-        if (enemy == 2){
-    if(job == 1){
-      health = health - random(7,13);
-    }
-    if(job == 2){
-     health = health - random (5,10); 
-    }
-    enemy = 1;
+    } 
+  
+}
+  void options (Avatar avatar) {
+    background(#9c9c9c);
+    attack();
+    magic();
+    block();
+
+
+
+
+    if (enemy == 2) {
+      if (job == 1) {
+        health = health - random(7, 13);
+      }
+      if (job == 2) {
+        health = health - random (5, 10);
+      }
+      enemy = 1;
     }
     if (enemy != 2) {
       if (mousePressed) {
         if (mouseY <= buttonY+50 && mouseY>= buttonY) {
           if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
-                if(job == 1){
-      enemyH = enemyH - random(5,10);
-    }
-    if(job == 2){
-     enemyH = enemyH - random (7,13); 
-    }
-    enemy = 2;
+            if (job == 1) {
+              enemyH = enemyH - random(5, 10);
+            }
+            if (job == 2) {
+              enemyH = enemyH - random (7, 13);
+            }
+            enemy = 2;
           }
           if (mouseX >= buttonX && mouseX <= buttonX+100) {
-                            if(job == 1){
-      enemyH = enemyH - random(8,14);
-      mana = mana - random(4-7) ;
-    }
-    if(job == 2){
-     enemyH = enemyH - random (4,9); 
-     mana = mana - random(4-7);
-    }
+            if (job == 1) {
+              enemyH = enemyH - random(8, 14);
+              mana = mana - random(4-7) ;
+            }
+            if (job == 2) {
+              enemyH = enemyH - random (4, 9); 
+              mana = mana - random(4-7);
+            }
             enemy = 2;
           }
           if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
@@ -64,6 +69,9 @@ float enemyH;
         }
       }
     }
+        text(health,100,100);
+    text(mana,100,300);
+    text(enemyH,100,500);
   }
 
 

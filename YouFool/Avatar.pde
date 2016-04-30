@@ -45,6 +45,11 @@ class Avatar {
       fight.options(this);
       //text(mana,300,100);
     }
+    if (keyPressed) {
+      if (key == 'f') {
+        state = "fight";
+      }
+    }
   }
 
   void move() {
