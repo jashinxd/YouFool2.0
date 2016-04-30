@@ -1,6 +1,6 @@
 class Fight {
     float p=200;
-  float buttonX=150;
+  float buttonX=width/2 - 50;
   float buttonY=1;
 
   Avatar avatar;
@@ -11,29 +11,17 @@ class Fight {
     attack();
     magic();
     block();
-   
-    if (mouseY >= buttonY+20 && mouseY<= buttonY) {
-        if (mouseX >= buttonX && mouseX <= buttonX+50) {
-          
-        }
-        if (mouseX >= buttonX+p && mouseX <= buttonX+p+50) {
-        }
-        if (mouseX >= buttonX+2*p && mouseX <= buttonX+2*p+50) {
-        }
-      }
-    
-   
-   
-   
     if (mousePressed) {
-      if (mouseY >= buttonY+20 && mouseY<= buttonY) {
+      if (mouseY <= buttonY+20 && mouseY>= buttonY) {
         if (mouseX >= buttonX-p && mouseX <= buttonX-p+50) {
-          
+            text (50,300,300);
         }
         if (mouseX >= buttonX && mouseX <= buttonX+50) {
-          
+          text (50,300,300);
+          avatar.mana = avatar.mana - random(2,5);
         }
         if (mouseX >= buttonX+p && mouseX <= buttonX+p+50) {
+            text (50,300,300);
         }
       }
     }

@@ -19,6 +19,7 @@ void draw() {
   image(photo, 0, 0);
       avatar.process();
     avatar.move();
+    
 
 }
 
