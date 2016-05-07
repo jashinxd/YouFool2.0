@@ -12,10 +12,10 @@ class Avatar {
   PImage down;
   PImage left;
   PImage right;
-  Fight fight;
+
 
   void process() {
-    fight = new Fight();
+    
     up = loadImage("../sprites/characterup.jpg");
     down = loadImage("../sprites/characterdown.jpg");
     left = loadImage("../sprites/characterleft.jpg");
@@ -40,16 +40,8 @@ class Avatar {
     if (Espawn <= 3) {
       state = "fight";
     }
-    if (state == "fight") {
-      //text(mana,100,100);
-      fight.options(this);
-      //text(mana,300,100);
-    }
-    if (keyPressed) {
-      if (key == 'f') {
-        state = "fight";
-      }
-    }
+
+
   }
 
   void move() {

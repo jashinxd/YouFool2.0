@@ -4,24 +4,11 @@ class Fight {
   float buttonY=1;
   float health;
   float mana;
-  float job=1;
-  float enemy;
+  float job=2;
+  float enemy=1;
   float enemyH = 50;
-void job (){
- 
-    if ( job == 1 ) {
-      //mage
-      mana = 100; 
-      health = 40;
-    }
-    if ( job == 2 ) {
-      //warrior
-      mana = 20; 
-      health = 75;
-    } 
-  
-}
-  void options (Avatar avatar) {
+
+  void options () {
     background(#9c9c9c);
     attack();
     magic();
@@ -32,14 +19,20 @@ void job (){
 
     if (enemy == 2) {
       if (job == 1) {
-        health = health - random(7, 13);
+        health = health - random(8, 14);
       }
       if (job == 2) {
-        health = health - random (5, 10);
+        health = health - random (6, 11);
+      }
+      try {
+        Thread.sleep(500);                 //1000 milliseconds is one second.
+      } 
+      catch(InterruptedException ex) {
+        Thread.currentThread().interrupt();
       }
       enemy = 1;
     }
-    if (enemy != 2) {
+    if (enemy == 1) {
       if (mousePressed) {
         if (mouseY <= buttonY+50 && mouseY>= buttonY) {
           if (mouseX >= buttonX-p && mouseX <= buttonX-p+100) {
@@ -49,29 +42,50 @@ void job (){
             if (job == 2) {
               enemyH = enemyH - random (7, 13);
             }
+            try {
+              Thread.sleep(500);                 //1000 milliseconds is one second.
+            } 
+            catch(InterruptedException ex) {
+              Thread.currentThread().interrupt();
+            }
             enemy = 2;
           }
           if (mouseX >= buttonX && mouseX <= buttonX+100) {
+            if (mana > 7){
             if (job == 1) {
               enemyH = enemyH - random(8, 14);
-              mana = mana - random(4-7) ;
+              mana = mana - random(7,9) ;
             }
             if (job == 2) {
               enemyH = enemyH - random (4, 9); 
-              mana = mana - random(4-7);
+              mana = mana - random(7,9);
+            }
+            try {
+              Thread.sleep(500);                 //1000 milliseconds is one second.
+            } 
+            catch(InterruptedException ex) {
+              Thread.currentThread().interrupt();
             }
             enemy = 2;
-          }
+            }  
+        }
+          
           if (mouseX >= buttonX+p && mouseX <= buttonX+p+100) {
             rect(100, 100, 100, 100);
+            try {
+              Thread.sleep(500);                 //1000 milliseconds is one second.
+            } 
+            catch(InterruptedException ex) {
+              Thread.currentThread().interrupt();
+            }
             enemy = 2;
           }
         }
       }
     }
-        text(health,100,100);
-    text(mana,100,300);
-    text(enemyH,100,500);
+    text(health, 100, 100);
+    text(mana, 100, 300);
+    text(enemyH, 100, 500);
   }
 
 
