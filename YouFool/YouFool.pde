@@ -33,12 +33,14 @@ void draw() {
       fight.encounter = random(1);
       fight.mana = 100; 
       fight.health = 40;
+      enemyH = 50;
     }
     if ( fight.job == 2 ) {
       //warrior
       fight.encounter = random(1);
       fight.mana = 20; 
       fight.health = 75;
+      enemyH = 50;
     }
     }
  if (avatar.state == "fight"){
