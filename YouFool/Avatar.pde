@@ -16,10 +16,10 @@ class Avatar {
 
   void process() {
     
-    up = loadImage("../sprites/characterup.jpg");
-    down = loadImage("../sprites/characterdown.jpg");
-    left = loadImage("../sprites/characterleft.jpg");
-    right = loadImage("../sprites/characterright.jpg");
+    up = loadImage("../sprites/characterup.png");
+    down = loadImage("../sprites/characterdown.png");
+    left = loadImage("../sprites/characterleft.png");
+    right = loadImage("../sprites/characterright.png");
     if (keyPressed) {
       if (key == 'r') {
         Espawn = 40;
